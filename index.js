@@ -133,6 +133,6 @@ serve.get("/memorial_list", (req, res) => {
 
 
 
-serve.listen(3100, () => {
+serve.listen(80, () => {
   console.log("服务器已启动");
 });
