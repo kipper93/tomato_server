@@ -3,7 +3,7 @@
  */
 const { MongoClient } = require('mongodb')
 
-const url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin'
+const url = 'mongodb://test:123@127.0.0.1/tomatobase?authSource=admin'
 
 const client = new MongoClient(url);
 
