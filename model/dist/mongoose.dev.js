@@ -4,11 +4,12 @@
   mongoose.js ：建立数据库连接
  */
 var _require = require('mongodb'),
-    MongoClient = _require.MongoClient; // const url = 'mongodb://test:123@127.0.0.1/tomatobase?authSource=admin'
+    MongoClient = _require.MongoClient; // 本地调试
+// const url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin'
+// 发布阿里云
 
 
-var url = 'mongodb://test:123@127.0.0.1:27017/tomatobase?authSource=admin'; //
-
+var url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin';
 var client = new MongoClient(url);
 var dbName = 'tomatobase';
 
@@ -31,11 +32,11 @@ var getHomeData = function getHomeData() {
 
         case 6:
           array = _context.sent;
-          console.log(array);
+          // console.log(array);
           client.close();
           return _context.abrupt("return", array);
 
-        case 10:
+        case 9:
         case "end":
           return _context.stop();
       }
@@ -78,12 +79,15 @@ var setHomeData = function setHomeData(data) {
     while (1) {
       switch (_context3.prev = _context3.next) {
         case 0:
-          MongoClientw = require('mongodb').MongoClient;
-          url = 'mongodb://127.0.0.1:2017/tomatobase?authSource=admin';
+          MongoClientw = require('mongodb').MongoClient; // 发布阿里云
+
+          url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin'; // 本地调试
+          // const url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin'
+
           MongoClientw.connect(url, function (err, db) {
             if (err) throw err;
             var dbo = db.db("tomatobase");
-            dbo.collection("tomato_home").insertOne(myobj, function (err, res) {
+            dbo.collection("tomato_home").insertOne(data, function (err, res) {
               if (err) throw err;
               console.log("文档插入成功");
               db.close();

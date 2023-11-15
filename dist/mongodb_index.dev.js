@@ -104,7 +104,7 @@ express.post("/add_home", function (req, res) {
     date: time,
     avatarUrl: avatarUrl
   };
-  mongodb.setHomeData([data]).then(function (result) {
+  mongodb.setHomeData(data).then(function (result) {
     res.end("success");
   });
 });
