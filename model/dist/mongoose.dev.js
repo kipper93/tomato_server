@@ -7,7 +7,7 @@ var _require = require('mongodb'),
     MongoClient = _require.MongoClient; // const url = 'mongodb://test:123@127.0.0.1/tomatobase?authSource=admin'
 
 
-var url = 'mongodb://test:123@127.0.0.1:27017/tomatobase?authSource=admin'; //
+var url = 'mongodb://test:123@127.0.0.1:27017/tomatobase?authSource=admin'; ///
 
 var client = new MongoClient(url);
 var dbName = 'tomatobase';
