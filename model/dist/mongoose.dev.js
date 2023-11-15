@@ -7,7 +7,7 @@ var _require = require('mongodb'),
     MongoClient = _require.MongoClient; // const url = 'mongodb://test:123@127.0.0.1/tomatobase?authSource=admin'
 
 
-var url = 'mongodb://localhost:27017/tomatobase?authSource=admin';
+var url = 'mongodb://127.0.0.1:27017/tomatobase?authSource=admin';
 var client = new MongoClient(url);
 var dbName = 'tomatobase';
 
@@ -78,7 +78,7 @@ var setHomeData = function setHomeData(data) {
       switch (_context3.prev = _context3.next) {
         case 0:
           MongoClientw = require('mongodb').MongoClient;
-          url = 'mongodb://localhost:2017/tomatobase?authSource=admin';
+          url = 'mongodb://127.0.0.1:2017/tomatobase?authSource=admin';
           MongoClientw.connect(url, function (err, db) {
             if (err) throw err;
             var dbo = db.db("tomatobase");

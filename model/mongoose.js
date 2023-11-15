@@ -4,7 +4,7 @@
 const { MongoClient } = require('mongodb')
 
 // const url = 'mongodb://test:123@127.0.0.1/tomatobase?authSource=admin'
-const url = 'mongodb://localhost:27017/tomatobase?authSource=admin'
+const url = 'mongodb://127.0.0.1:27017/tomatobase?authSource=admin'
 
 const client = new MongoClient(url);
 
@@ -34,7 +34,7 @@ const getMemorial_listData = async () => {
 
 const setHomeData = async (data) => {
   let MongoClientw = require('mongodb').MongoClient;
-  const url = 'mongodb://localhost:2017/tomatobase?authSource=admin'
+  const url = 'mongodb://127.0.0.1:2017/tomatobase?authSource=admin'
    
   MongoClientw.connect(url, function(err, db) {
       if (err) throw err;
