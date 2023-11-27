@@ -10,7 +10,6 @@
   // 发布阿里云
   const url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin'
   
-  
   const client = new MongoClient(url);
   
   const dbName = 'tomatobase'
