@@ -24,7 +24,7 @@ express.listen(443, () => {
   console.log("服务器已启动,端口 443");
 });
 
-//监听8000端口，默认localhost: 127.0.0.1 || 0.0.0.0
+//监听 8000端口，默认localhost: 127.0.0.1 || 0.0.0.0
 
 /*
   express.js: 使用 mongoose 建立接口，添加数据到 MongoDB
