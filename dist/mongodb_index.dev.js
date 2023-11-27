@@ -21,8 +21,8 @@ express.get('/', function (request, response) {
   // 路由
   response.send("hello world!"); // 传送HTTP响应
 });
-express.listen(80, function () {
-  console.log("服务器已启动,端口 80");
+express.listen(443, function () {
+  console.log("服务器已启动,端口 443");
 }); //监听8000端口，默认localhost: 127.0.0.1 || 0.0.0.0
 
 /*
