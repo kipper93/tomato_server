@@ -20,8 +20,8 @@ express.get('/', function (request, response) { // 路由
 })
 
 
-express.listen(80, () => {
-  console.log("服务器已启动,端口号 80");
+express.listen(8000, () => {
+  console.log("服务器已启动,端口号 8000");
 });
 
 //监听80端口，默认localhost: 127.0.0.1 || 0.0.0.0
