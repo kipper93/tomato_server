@@ -21,9 +21,9 @@ express.get('/', function (request, response) {
   // 路由
   response.send("hello world!"); // 传送HTTP响应
 });
-express.listen(8000, function () {
-  console.log("服务器已启动,端口号 8000");
-}); //监听8000端口，默认localhost: 127.0.0.1 || 0.0.0.0
+express.listen(80, function () {
+  console.log("服务器已启动,端口号 80");
+}); //监听80端口，默认localhost: 127.0.0.1 || 0.0.0.0
 
 /*
   express.js: 使用 mongoose 建立接口，添加数据到 MongoDB
