@@ -61,7 +61,6 @@ var getMemorial_listData = function getMemorial_listData() {
 
         case 6:
           array = _context2.sent;
-          // console.log(array);
           client.close();
           return _context2.abrupt("return", array);
 

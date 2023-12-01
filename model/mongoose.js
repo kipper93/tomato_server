@@ -28,7 +28,6 @@
     const db = client.db(dbName);
     const collection = db.collection('tomato_memorial_url');
     const array = await collection.find().toArray();
-    // console.log(array);
     client.close();
     return array;
   };
