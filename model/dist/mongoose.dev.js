@@ -32,7 +32,6 @@ var getHomeData = function getHomeData() {
 
         case 6:
           array = _context.sent;
-          // console.log(array);
           client.close();
           return _context.abrupt("return", array);
 
