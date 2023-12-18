@@ -109,4 +109,10 @@ express.post("/add_home", function (req, res) {
   mongodb.setHomeData(data).then(function (result) {
     res.end("success");
   });
+}); // 背影
+
+express.get("/back_list", function (req, res) {
+  mongodb.getBackData().then(function (result) {
+    res.end(JSON.stringify(result));
+  });
 });

@@ -50,8 +50,21 @@
   
   };
 
+
+  const getBackData = async () => {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection('back_list');
+    const array = await collection.find().toArray();
+    client.close();
+    return array;
+  };
+
+
+
   module.exports = {
     getHomeData,
     getMemorial_listData,
-    setHomeData
+    setHomeData,
+    getBackData
   }

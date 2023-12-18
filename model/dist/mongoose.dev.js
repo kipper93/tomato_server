@@ -100,8 +100,37 @@ var setHomeData = function setHomeData(data) {
   });
 };
 
+var getBackData = function getBackData() {
+  var db, collection, array;
+  return regeneratorRuntime.async(function getBackData$(_context4) {
+    while (1) {
+      switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
+          return regeneratorRuntime.awrap(client.connect());
+
+        case 2:
+          db = client.db(dbName);
+          collection = db.collection('back_list');
+          _context4.next = 6;
+          return regeneratorRuntime.awrap(collection.find().toArray());
+
+        case 6:
+          array = _context4.sent;
+          client.close();
+          return _context4.abrupt("return", array);
+
+        case 9:
+        case "end":
+          return _context4.stop();
+      }
+    }
+  });
+};
+
 module.exports = {
   getHomeData: getHomeData,
   getMemorial_listData: getMemorial_listData,
-  setHomeData: setHomeData
+  setHomeData: setHomeData,
+  getBackData: getBackData
 };
