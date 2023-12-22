@@ -111,3 +111,9 @@ express.get("/back_list", function (req, res) {
   });
 })
 
+// 背影
+express.get("/video_list", function (req, res) {
+  mongodb.getVideoData().then((result) => {
+    res.end(JSON.stringify(result));
+  });
+})

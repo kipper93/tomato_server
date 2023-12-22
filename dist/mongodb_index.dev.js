@@ -115,4 +115,10 @@ express.get("/back_list", function (req, res) {
   mongodb.getBackData().then(function (result) {
     res.end(JSON.stringify(result));
   });
+}); // 背影
+
+express.get("/video_list", function (req, res) {
+  mongodb.getVideoData().then(function (result) {
+    res.end(JSON.stringify(result));
+  });
 });

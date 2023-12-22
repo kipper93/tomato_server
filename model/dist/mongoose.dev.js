@@ -78,10 +78,10 @@ var setHomeData = function setHomeData(data) {
       switch (_context3.prev = _context3.next) {
         case 0:
           MongoClientw = require('mongodb').MongoClient; // 发布阿里云
+          // const url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin'
+          // 本地调试
 
-          url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin'; // 本地调试
-          // const url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin'
-
+          url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin';
           MongoClientw.connect(url, function (err, db) {
             if (err) throw err;
             var dbo = db.db("tomatobase");
@@ -128,9 +128,38 @@ var getBackData = function getBackData() {
   });
 };
 
+var getVideoData = function getVideoData() {
+  var db, collection, array;
+  return regeneratorRuntime.async(function getVideoData$(_context5) {
+    while (1) {
+      switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.next = 2;
+          return regeneratorRuntime.awrap(client.connect());
+
+        case 2:
+          db = client.db(dbName);
+          collection = db.collection('video_list');
+          _context5.next = 6;
+          return regeneratorRuntime.awrap(collection.find().toArray());
+
+        case 6:
+          array = _context5.sent;
+          client.close();
+          return _context5.abrupt("return", array);
+
+        case 9:
+        case "end":
+          return _context5.stop();
+      }
+    }
+  });
+};
+
 module.exports = {
   getHomeData: getHomeData,
   getMemorial_listData: getMemorial_listData,
   setHomeData: setHomeData,
-  getBackData: getBackData
+  getBackData: getBackData,
+  getVideoData: getVideoData
 };

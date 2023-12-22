@@ -35,9 +35,9 @@
   const setHomeData = async (data) => {
     let MongoClientw = require('mongodb').MongoClient;
     // 发布阿里云
-    const url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin'
+    // const url = 'mongodb://test:123@127.0.1/tomatobase?authSource=admin'
     // 本地调试
-    // const url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin'
+    const url = 'mongodb://test:123@8.139.6.250/tomatobase?authSource=admin'
     MongoClientw.connect(url, function(err, db) {
         if (err) throw err;
         let dbo = db.db("tomatobase");
@@ -61,10 +61,21 @@
   };
 
 
+  const getVideoData = async () => {
+    await client.connect();
+    const db = client.db(dbName);
+    const collection = db.collection('video_list');
+    const array = await collection.find().toArray();
+    client.close();
+    return array;
+  };
+
+
 
   module.exports = {
     getHomeData,
     getMemorial_listData,
     setHomeData,
-    getBackData
+    getBackData,
+    getVideoData
   }
